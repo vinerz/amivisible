@@ -7,7 +7,7 @@ AMI implements throttling mechanisms in order to not flood the main JS thread on
 ## Installation
 
 * Run `bower install --save amivisible`
-* Add the script tag `<script src="bower_components/amivisible/lib/index.js"></script>`
+* Add the script tag `<script src="bower_components/amivisible/lib/bundle.min.js"></script>`
 * You are ready to go!
 
 ## API
