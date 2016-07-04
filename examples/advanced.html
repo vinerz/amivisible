@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>AMI - Advanced Example</title>
+  <script src="../lib/bundle.min.js"></script>
+  <style>
+    #fancy-wrapper {
+      width: 250px;
+      height: 250px;
+      overflow: scroll;
+    }
+    .fancy-spacer {
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div id="fancy-wrapper">
+    <div class="fancy-spacer"></div>
+    <div id="fancy-element">
+      Whoa, I am even inside a scrolling div!
+      Too bad it doesn't work yet.
+    </div>
+    <div class="fancy-spacer"></div>
+  </div>
+
+  <script>
+    var element = document.getElementById('fancy-element');
+    var scrollElement = document.getElementById('fancy-wrapper');
+
+    element.addEventListener('appear', function() {
+      console.log('The element appeared on the screen!');
+    });
+
+    element.addEventListener('disappear', function() {
+      console.log('The element vanished from the screen!');
+    });
+
+    AMIVisible.monitor(element, {
+      scrolling_parent: scrollElement // not yet supported
+    });
+  </script>
+</body>
+</html>

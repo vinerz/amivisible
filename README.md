@@ -27,6 +27,20 @@ AMIVisible.monitor(element, options);
 | force_process  | boolean | false | Checks the element state immediately without waiting for next scroll event  |
 | enable_bubbling  | boolean | false | Enabled event bubbling for Event Delegation  |
 
+### `AMIVisible.set`
+____
+Change the default AMI's internal options.
+
+```js
+AMIVisible.set(key, newValue);
+```
+
+#### Available settings
+
+| key | type | default | description |
+| ------------- | ------------- | ------------- | ------------- |
+| throttle_window  | Number | 90 | The window (in milliseconds) before making a new scroll calculation  |
+
 ## Usage
 
 ### Basic usage

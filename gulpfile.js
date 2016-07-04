@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var concat = require('gulp-concat');
+var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
@@ -8,9 +8,11 @@ gulp.task('clean', function(cb) {
   return del(['lib/*'], cb);
 });
 
-gulp.task('build', ['clean'], function() {
-  return gulp.src('src/**/*.js')
-    .pipe(concat('index.js')) //the name of the resulting file
+gulp.task('bundle', ['clean'], function() {
+  return gulp.src('src/index.js')
+    .pipe(sourcemaps.init())
+    .pipe(rename('bundle.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('lib')) //the destination folder
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('lib'));
 });

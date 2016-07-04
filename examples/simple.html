@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>AMI - Simple Example</title>
+  <script src="../lib/bundle.min.js"></script>
+  <style>
+    body {
+      padding-top: 1500px;
+      padding-bottom: 1500px;
+    }
+  </style>
+</head>
+<body>
+  <div id="fancy-element">
+    Hello! See the developer console for more info :)
+  </div>
+
+  <script>
+    var element = document.getElementById('fancy-element');
+
+    element.addEventListener('appear', function() {
+      console.log('The element appeared on the screen!');
+    });
+
+    element.addEventListener('disappear', function() {
+      console.log('The element vanished from the screen!');
+    });
+
+    AMIVisible.monitor(element);
+  </script>
+</body>
+</html>

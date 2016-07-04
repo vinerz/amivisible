@@ -1,0 +1,41 @@
+<html>
+<head>
+  <title>AMI - Delegation Example</title>
+  <script src="../lib/bundle.min.js"></script>
+  <style>
+    body {
+      padding-top: 1500px;
+      padding-bottom: 1500px;
+    }
+  </style>
+</head>
+<body>
+  <div id="fancy-element">
+    Hello! See the developer console for more info :)
+  </div>
+
+  <script>
+    var element = document.getElementById('fancy-element');
+
+    document.body.addEventListener('appear', function(event) {
+      if(event.target !== element) {
+        return false;
+      }
+
+      console.log('Body reports: The fancy element appeared on the screen!');
+    });
+
+    document.body.addEventListener('disappear', function(event) {
+      if(event.target !== element) {
+        return false;
+      }
+
+      console.log('Body reports: The fancy element vanished from the screen!');
+    });
+
+    AMIVisible.monitor(element, {
+      enable_bubbling: true
+    });
+  </script>
+</body>
+</html>

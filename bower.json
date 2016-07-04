@@ -4,7 +4,7 @@
     "Vinicius Tavares <vinerz@vinerz.net>"
   ],
   "description": "A micro tool with only 1.2k written in vanilla JavaScript, for checking when an element in the DOM appears or disappears from the viewport",
-  "main": "lib/index.js",
+  "main": "lib/bundle.min.js",
   "moduleType": [
     "globals"
   ],
