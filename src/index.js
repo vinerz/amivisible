@@ -3,7 +3,9 @@ var AMIVisible = (function() {
   var scrollTimer, lastScrollFireTime, lastScrollPos;
 
   var visibleY = function(el) {
-    var rect = el.getBoundingClientRect(), top = rect.top, height = rect.height,
+    var rect = el.getBoundingClientRect(),
+      top = rect.top,
+      height = rect.height,
       el = el.parentNode;
     do {
       rect = el.getBoundingClientRect();
@@ -42,21 +44,21 @@ var AMIVisible = (function() {
   };
 
   var _checkSingleElement = function(el) {
-    if(visibleY(el.element)) {
-      if(el.lastState !== 'visible') {
+    if (visibleY(el.element)) {
+      if (el.lastState !== 'visible') {
         var fEvent = new CustomEvent('appear', {
-      		bubbles: el.enable_bubbling,
-      		cancelable: true
-      	});
+          bubbles: el.enable_bubbling,
+          cancelable: true
+        });
         el.element.dispatchEvent(fEvent);
         el.lastState = 'visible';
       }
     } else {
-      if(el.lastState !== 'invisible') {
+      if (el.lastState !== 'invisible') {
         var fEvent = new CustomEvent('disappear', {
-      		bubbles: el.enable_bubbling,
-      		cancelable: true
-      	});
+          bubbles: el.enable_bubbling,
+          cancelable: true
+        });
         el.element.dispatchEvent(fEvent);
         el.lastState = 'invisible';
       }
@@ -64,7 +66,7 @@ var AMIVisible = (function() {
   };
 
   var checkElements = function() {
-    for(var i = 0, len = targets.length; i < len; i++) {
+    for (var i = 0, len = targets.length; i < len; i++) {
       _checkSingleElement(targets[i]);
     }
   }
@@ -74,18 +76,22 @@ var AMIVisible = (function() {
 
   return {
     monitor: function(el, options) {
-      if(!options) {
+      if (!options) {
         options = {};
       }
 
       options.force_process = options.force_process || false;
       options.enable_bubbling = options.enable_bubbling || false;
 
-      if(el) {
-        var obj = { element: el, lastState: null, enable_bubbling: options.enable_bubbling };
+      if (el) {
+        var obj = {
+          element: el,
+          lastState: null,
+          enable_bubbling: options.enable_bubbling
+        };
         targets.push(obj);
 
-        if(options.force_process) {
+        if (options.force_process) {
           _checkSingleElement(obj);
         }
       }
