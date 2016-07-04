@@ -4,6 +4,12 @@ AMIVisible (or simply AMI for close friends) is a dependency-free micro tool wit
 
 AMI implements throttling mechanisms in order to not flood the main JS thread on scroll events and also supports event delegation.
 
+## Installation
+
+* Run `bower install --save amivisible`
+* Add the script tag `<script src="bower_components/amivisible/lib/index.js"></script>`
+* You are ready to go!
+
 ## API
 
 ### `AMIVisible.monitor`
