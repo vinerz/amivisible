@@ -74,6 +74,10 @@ var AMIVisible = (function() {
 
   return {
     monitor: function(el, options) {
+      if(!options) {
+        options = {};
+      }
+
       options.force_process = options.force_process || false;
       options.enable_bubbling = options.enable_bubbling || false;
 
