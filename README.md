@@ -85,7 +85,7 @@ AMIVisible.monitor(element, {
 ## Known issues
 
 * There is currently no way to stop monitoring an object.
-* There is no way to change the scroll parent. We can only check for window now.
+* There is no way to change the scroll parent for specific elements. We can only check for window scroll now.
 
 ## Compatibility
 
