@@ -1,6 +1,6 @@
 # Am I Visible?
 
-AMIVisible (or simply AMI for close friends) is a dependency-free micro tool with only 1.2k written in vanilla JavaScript for checking when an element appears or disappears from the viewport.
+AMIVisible (or simply AMI for close friends) is a dependency-free micro tool (735 bytes min+gz) written in vanilla JavaScript for checking when an element appears or disappears from the viewport.
 
 AMI implements throttling mechanisms in order to not flood the main JS thread on scroll events and also supports event delegation.
 
