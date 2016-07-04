@@ -6,7 +6,7 @@
   "description": "A micro tool with only 1.2k written in vanilla JavaScript, for checking when an element in the DOM appears or disappears from the viewport",
   "main": "lib/index.js",
   "moduleType": [
-    "amd"
+    "globals"
   ],
   "keywords": [
     "amivisible",
@@ -16,12 +16,19 @@
     "check"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/vinerz/amivisible",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vinerz/amivisible.git"
+  },
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "src",
     "test",
-    "tests"
+    "tests",
+    "gulpfile.js",
+    "README.md"
   ]
 }
